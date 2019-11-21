@@ -287,6 +287,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void consultapordescripcion(View v) {
+        if (etdescripcion.getText().toString().length() == 0) {
+            etdescripcion.setError("Campo obligatorio");
+            estadoDescripcion = false;
+        } else {
+            estadoDescripcion = true;
+        }
+        if (estadoDescripcion) {
+            String descripcion = etdescripcion.getText().toString();
+            datos.setDescripcion(descripcion);
+            if (conexion.consultarDescripcion(datos)) {
+                etcodigo.setText("" + datos.getCodigo());
+                etdescripcion.setText(datos.getDescripcion());
+                etprecio.setText("" + datos.getPrecio()); //Toast.makeText(this, "Se encontro uno", Toast.LENGTH_SHORT).show();
+
+            }else{ Toast.makeText(this, "No existe un artículo con dicha descripción", Toast.LENGTH_SHORT).show();
+                limpiarDatos();
+            }
+        } else {
+            Toast.makeText(this, "Ingrese la descripción del articulo a buscar.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
 

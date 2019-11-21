@@ -163,4 +163,50 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_listaArticulos) {
+            Intent spinnerActivity = new Intent(MainActivity.this,consultaSpinner.class);
+            startActivity(spinnerActivity);
+            return true;
+
+        } else if (id == R.id.action_listaArticulos1) {
+            Intent listViewActivity = new Intent(MainActivity.this,ListViewArticulos.class);
+
+            startActivity(listViewActivity);
+            return true;
+        }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_Acercade){
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    context);
+            // Establecer el título
+            alertDialogBuilder.setTitle("Proyecto creado por:");
+            // Establecer mensaje de diálogo
+            alertDialogBuilder
+                    .setMessage("Yuri López \nSis 22")
+                    .setCancelable(false)
+                    .setNegativeButton("Aceptar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Si presiona que Aceptar se cerrara el mensaje de dialogo
+                            dialog.cancel();
+                        }
+                    });
+            // Crear mensaje AlertDialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            // Mostrar alert
+            alertDialog.show();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 }

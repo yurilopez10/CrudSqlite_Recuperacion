@@ -261,6 +261,34 @@ public class MainActivity extends AppCompatActivity {
         etcodigo.requestFocus();
     }
 
+    public void consultaporcodigo(View v) {
+
+        if (etcodigo.getText().toString().length() == 0) {
+            etcodigo.setError("Campo obligatorio");
+            estadoCodigo = false;
+        } else {
+            estadoCodigo = true;
+        }
+
+        if (estadoCodigo) {
+            String codigo = etcodigo.getText().toString();
+            datos.setCodigo(Integer.parseInt(codigo));
+            //if(conexion.consultaCodigo(datos)){
+            if (conexion.consultaArticulos(datos)) {
+                etdescripcion.setText(datos.getDescripcion());
+                etprecio.setText("" + datos.getPrecio());
+                //Toast.makeText(this, "Se encontro uno", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "No existe un artículo con dicho código", Toast.LENGTH_SHORT).show();
+                limpiarDatos();
+            }
+        } else {
+            Toast.makeText(this, "Ingrese el código del articulo a buscar.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 
 
 }

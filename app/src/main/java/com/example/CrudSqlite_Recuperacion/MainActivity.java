@@ -330,4 +330,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void modificacion(View v) {
+        if(etcodigo.getText().toString().length()==0){
+            etcodigo.setError("campo obligatorio");
+            estadoCodigo = false;
+
+        }else { estadoCodigo=true;
+        }
+
+        if(estadoCodigo) {
+            String cod = etcodigo.getText().toString();
+            String descripcion = etdescripcion.getText().toString();
+            double precio = Double.parseDouble(etprecio.getText().toString());
+            datos.setCodigo(Integer.parseInt(cod));
+            datos.setDescripcion(descripcion);
+            datos.setPrecio(precio);
+
+            if(conexion.modificar(datos)){
+                Toast.makeText(this, "Registro Modificado Correctamente.", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "No se han encontrado resultados para la busqueda especificada.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
 }

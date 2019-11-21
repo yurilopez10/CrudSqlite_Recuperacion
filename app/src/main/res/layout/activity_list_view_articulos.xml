@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ListViewArticulos">
+
+    <Toolbar
+        android:id="@+id/ListaArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <SearchView android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FCE4EC"
+            android:queryHint="Buscar"
+            android:iconifiedByDefault="false" />
+
+        <Space android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listViewPersonas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="#4AFCE4EC"
+        android:layout_marginBottom="35dp" />
+
+</RelativeLayout>

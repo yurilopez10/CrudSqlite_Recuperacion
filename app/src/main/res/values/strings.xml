@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CRUD SQLite</string>
+    <string name="action_limpiar">Limpiar</string>
+    <string name="action_listaArticulos">Ver</string>
+    <string name="action_listaArticulos1">Articulos</string>
+    <string name="action_Acercade">Acercade</string>
+    <string name="ArRegistrados">Artículos registrados</string>
+    <string name="VerArti">Ver Artículos</string>
+</resources>

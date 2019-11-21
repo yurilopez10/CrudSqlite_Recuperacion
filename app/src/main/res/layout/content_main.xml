@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F3FAF3"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="REGISTRO DE ARTICULOS"
+        android:textAlignment="center"
+        android:textColor="#0F0000"
+        android:textSize="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/producto" />
+
+            <EditText
+                android:id="@+id/etcodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:drawableStart="@drawable/ic_input1"
+                android:drawablePadding="10dp"
+                android:hint="Ingrese el codigo del articulo"
+                android:inputType="number"
+                android:textColor="#607D8B"
+                android:paddingLeft="20dp"  />
+
+            <EditText
+                android:id="@+id/etdescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:drawableStart="@drawable/ic_input2"
+                android:drawablePadding="10dp"
+                android:textColor="#607D8B"
+                android:hint="Ingrese la descripción del articulo"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                />
+
+            <EditText
+                android:id="@+id/etprecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:drawableStart="@drawable/ic_precio"
+                android:drawablePadding="5dp"
+                android:textColor="#607D8B"
+                android:hint="Ingreser el precio del producto"
+                android:inputType="numberDecimal"
+                android:paddingLeft="20dp"
+                android:paddingRight="100dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/btn_estilo"
+                    android:onClick="guardar"
+                    android:text="Guardar" />
+
+                <Button
+                    android:id="@+id/btnConsultar"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_estilo"
+                    android:onClick="consultapordescripcion"
+                    android:text="Consultar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnConsultar1"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/btn_estilo"
+                    android:onClick="consultaporcodigo"
+                    android:padding="5dp"
+                    android:text="Consultar por código" />
+
+                <Button
+                    android:id="@+id/btnModificar"
+                    android:layout_width="180dp"
+                    android:layout_height="49dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_estilo"
+                    android:onClick="modificacion"
+                    android:text="Modificar" />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:background="@drawable/btn_estilo"
+                android:text="Eliminar"
+                android:onClick="eliminarporcodigo"/>
+
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn_estilo"
+                android:onClick="limpiarD"
+                android:text="Limpiar" />
+        </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

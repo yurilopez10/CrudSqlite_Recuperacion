@@ -133,4 +133,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void confirmacion() {
+        String mensaje = "¿Realmente desea cerrar esta pantalla?";
+        dialogo = new AlertDialog.Builder(MainActivity.this);
+        dialogo.setIcon(R.drawable.ic_close);
+        dialogo.setTitle("Está seguro");
+        dialogo.setMessage(mensaje);
+        dialogo.setCancelable(false);
+        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo, int id) { /*Intent intent = new Intent(DashboardLuces.this, luces_control_sms.class); startActivity(intent);*/
+                //DashboardLuces.this.finishAffinity();
+                MainActivity.this.finish();
+            }
+        });
+        dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo, int id) {
+                // Toast.makeText(getApplicationContext(), "Operación Cancelada.", Toast.LENGTH_LONG).show();
+            }
+        });
+        dialogo.show();
+    }
+
+
+
 }

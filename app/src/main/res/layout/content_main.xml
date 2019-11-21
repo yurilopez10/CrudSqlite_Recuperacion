@@ -94,7 +94,7 @@
                     android:id="@+id/btnGuardar"
                     android:layout_width="180dp"
                     android:layout_height="48dp"
-                    android:background="@drawable/btn_estilo"
+                    android:background="#FFEB3B"
                     android:onClick="guardar"
                     android:text="Guardar" />
 
@@ -103,7 +103,7 @@
                     android:layout_width="180dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/btn_estilo"
+                    android:background="#FFEB3B"
                     android:onClick="consultapordescripcion"
                     android:text="Consultar" />
             </LinearLayout>
@@ -127,7 +127,7 @@
                     android:id="@+id/btnConsultar1"
                     android:layout_width="180dp"
                     android:layout_height="48dp"
-                    android:background="@drawable/btn_estilo"
+                    android:background="#FFEB3B"
                     android:onClick="consultaporcodigo"
                     android:padding="5dp"
                     android:text="Consultar por código" />
@@ -137,7 +137,7 @@
                     android:layout_width="180dp"
                     android:layout_height="49dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/btn_estilo"
+                    android:background="#FFEB3B"
                     android:onClick="modificacion"
                     android:text="Modificar" />
 
@@ -152,7 +152,7 @@
                 android:id="@+id/btnEliminar"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:background="@drawable/btn_estilo"
+                android:background="#FFEB3B"
                 android:text="Eliminar"
                 android:onClick="eliminarporcodigo"/>
 
@@ -162,7 +162,7 @@
                 android:layout_width="180dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/btn_estilo"
+                android:background="#FFEB3B"
                 android:onClick="limpiarD"
                 android:text="Limpiar" />
         </LinearLayout>

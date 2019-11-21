@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             alertDialogBuilder.setTitle("Proyecto creado por:");
             // Establecer mensaje de diálogo
             alertDialogBuilder
-                    .setMessage("Yuri López \nSis 22")
+                    .setMessage("Kathy Flores \nSis 21B")
                     .setCancelable(false)
                     .setNegativeButton("Aceptar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -205,6 +205,53 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void guardar(View v) {
+
+        if (etcodigo.getText().toString().length() == 0) {
+            estadoCodigo = false;
+            etcodigo.setError("Campo obligatorio");
+        } else {
+            estadoCodigo = true;
+        }
+
+        if (etdescripcion.getText().toString().length() == 0) {
+            estadoDescripcion = false;
+            etdescripcion.setError("Campo obligatorio");
+        } else {
+            estadoDescripcion = true;
+        }
+
+        if (etprecio.getText().toString().length() == 0) {
+            estadoPrecio = false;
+            etprecio.setError("Campo obligatorio");
+        } else {
+            estadoPrecio = true;
+        }
+        if (estadoCodigo && estadoDescripcion && estadoPrecio) {
+            // Toast.makeText(this, "Vamos bien", Toast.LENGTH_LONG_SHORT).show();
+
+            try {
+                datos.setCodigo(Integer.parseInt(etcodigo.getText().toString()));
+                datos.setDescripcion(etdescripcion.getText().toString());
+                datos.setPrecio(Double.parseDouble(etprecio.getText().toString()));
+                //if(conexion.insertardatos(datos)){ //if(conexion.InsertRegister(datos)){
+                if (conexion.InserTradicional(datos)) {
+                    Toast.makeText(this, "Registro agregado satisfactoriamente!", Toast.LENGTH_SHORT).show();
+                    limpiarDatos();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error. Ya existe un registro\n" + " Código: " + etcodigo.getText().toString(), Toast.LENGTH_LONG).show();
+                    limpiarDatos();
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "ERROR. Ya existe.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void mensaje(String mensaje) {
+        Toast.makeText(this, "" + mensaje, Toast.LENGTH_SHORT).show();
     }
 
 

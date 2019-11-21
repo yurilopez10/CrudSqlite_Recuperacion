@@ -310,7 +310,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void eliminarporcodigo(View v) {
+        if(etcodigo.getText().toString().length()==0){
+            etcodigo.setError("campo obligatorio");
+            estadoCodigo = false;
 
+        }else { estadoCodigo=true; }
+
+        if(estadoCodigo){
+            String cod = etcodigo.getText().toString();
+            datos.setCodigo(Integer.parseInt(cod));
+            if(conexion.ElimiarPORCodigo(MainActivity.this,datos)){ //Toast.makeText(this, "Registro eliminado satisfactoriamente.", Toast.LENGTH_SHORT).show();
+                limpiarDatos();
+            }else{
+                Toast.makeText(this, "No existe un artículo con dicho código.", Toast.LENGTH_SHORT).show();
+                limpiarDatos();
+            }
+        }
+    }
 
 
 }

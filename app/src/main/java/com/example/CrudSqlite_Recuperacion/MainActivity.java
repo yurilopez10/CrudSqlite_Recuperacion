@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             alertDialogBuilder.setTitle("Proyecto creado por:");
             // Establecer mensaje de diálogo
             alertDialogBuilder
-                    .setMessage("Kathy Flores \nSis 21B")
+                    .setMessage("Yuri López \nSis 22")
                     .setCancelable(false)
                     .setNegativeButton("Aceptar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {

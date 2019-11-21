@@ -254,6 +254,13 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "" + mensaje, Toast.LENGTH_SHORT).show();
     }
 
+    public void limpiarDatos() {
+        etcodigo.setText(null);
+        etdescripcion.setText(null);
+        etprecio.setText(null);
+        etcodigo.requestFocus();
+    }
+
 
 
 }
